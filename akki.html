@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login and Registration </title>
+    <link rel="stylesheet" href="akki.css">
+</head>
+<body>
+    <div class="hero"> 
+        <div class ="form-box"> 
+            <div class ="button-box"> 
+                <div id="btn"></div>
+                <button type="button" class="taggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="taggle-btn" onclick="register()">Register</button>
+            </div>
+            <from  id ="login" class="input-group" action="/login" method="POST">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter password" required>
+                <input type="checkbox" class="check-box" ><span>Remember password</span>
+                <button type="submit" class="submit-btn" onclick="signup_checker(event)"> Log In</button>
+            </from>
+            <from  id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="email" class="input-field" placeholder="Email Id" required>
+                <input type="password" class="input-field" placeholder="Enter password" required>
+                <input type="checkbox" class="check-box" ><span>I agree to the terms & Conditions</span>
+                <button type="submit" class="submit-btn" onclick="signup_checker(event)"> Register</button>
+            </from>
+        </div>
+
+    </div> 
+    <script>
+        var login_checker = (event)=>{
+            let parent_data = event.target.parentNode;
+            let user_name = parent_data.children[0].value
+            let password = parent_data.children[1].value
+            console.log(user_name,password);
+            alert([user_name,password])
+        }
+        var signup_checker = (event)=>{
+            let parent_data = event.target.parentNode;
+            let user_name = parent_data.children[0].value
+            let email = parent_data.children[1].value
+            let password = parent_data.children[2].value
+            console.log(user_name,email,password);
+            alert([user_name,email,password])
+        }
+        var x=document.getElementById("login")
+        var y=document.getElementById("register")
+        var z=document.getElementById("btn")
+        function  register(){
+            x.style.left="-400px"
+            y.style.left="50px"
+            z.style.left="110px"
+        }
+        function  login(){
+            x.style.left="50px"
+            y.style.left="450px"
+            z.style.left="0px"
+        }
+    </script> 
+
+</body>
+</html>
+
+
+
